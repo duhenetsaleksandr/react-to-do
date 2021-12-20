@@ -1,0 +1,87 @@
+.todos-wrapper {
+    width: 100%;
+    height: 90%;
+    background-color: #193C40;
+    border-radius: 10px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.todos__list {
+    overflow: auto;
+    max-height: 505px;
+    overflow-y: scroll;
+
+    margin-right: -10px;
+    padding-right: 5px;
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: #04D9B2;
+    }
+
+    &::-webkit-scrollbar {
+        width: 5px;
+        background-color: transparent;
+    }
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 50px;
+        width: 100%;
+        color: #04D9B2;
+        border: 1px solid #04D9B2;
+        padding: 10px 25px;
+        border-radius: 5px;
+
+        &.checked {
+            opacity:0.4;
+
+            .index,
+            .title {
+                text-decoration: line-through;
+            }
+        }
+
+        &:not(:last-of-type) {
+            margin-bottom: 20px;
+        }
+
+        & >:not(:last-child) {
+            margin-right: 10px;
+        }
+
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+        }
+
+        input[type="checkbox"]:hover {
+            cursor: pointer;
+        }
+
+        .title {
+            flex: 1 0 auto;
+        }
+
+        button {
+            width: 25px;
+            height: 25px;
+            font-size: 20px;
+            line-height: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #04D9B2;
+            color: #193C40;
+            transition: all 0.2s ease;
+
+            &:hover {
+                background-color: #F28705;
+            }
+        }
+    }
+}
