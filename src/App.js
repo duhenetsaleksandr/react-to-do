@@ -6,12 +6,8 @@ import Main from "./components/Main";
 import Footer from "./components/Footer";
 import Loader from './components/Loader';
 import * as constants from './constants/constants';
-import Context from "./context";
-
-const fetchTodo = async (amountTodos = 5) => {
-    const response = await axios.get(`${constants.API_URL}?_limit=${amountTodos}`);
-    return response.data;
-}
+import Context from './context';
+import fetchTodo from './helpers';
 
 export default function App () {
     const [ loader, setLoader ] = useState(false);
