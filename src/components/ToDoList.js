@@ -10,8 +10,6 @@ export default function ToDoList(props) {
                     todo={todo}
                     index={index}
                     key={todo.id}
-                    toggleTodo={props.toggleTodo}
-                    deleteTodo={props.deleteTodo}
                     onEdit={props.onEdit}
                 />
             })}

@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import '../styles/main.scss';
 import CreateToDo from './CreateToDo';
 import ToDoList from './ToDoList';
+import Context from '../context';
 
 export default function Main(props) {
     const inputInitialState = '';
     const editModeInitialState = { status: false, todo: {} };
+    const { createTodo, editTodo } = useContext(Context);
 
     const [ inputValue, setInputValue ] = useState(inputInitialState);
     const [ editMode, setEditMode ] = useState(editModeInitialState);
@@ -24,9 +26,9 @@ export default function Main(props) {
         event.preventDefault();
         const value = inputValue.trim();
         if (!editMode.status) {
-            value && props.createTodo(value);
+            value && createTodo(value);
         } else {
-            value && props.editTodo(editMode.todo.id, value);
+            value && editTodo(editMode.todo.id, value);
         }
         clearAllStates();
     }
@@ -47,8 +49,6 @@ export default function Main(props) {
                     />
                     <ToDoList
                         todos={props.todos}
-                        toggleTodo={props.toggleTodo}
-                        deleteTodo={props.deleteTodo}
                         onEdit={activateEditState}
                     />
                 </div>

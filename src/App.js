@@ -6,6 +6,7 @@ import Main from "./components/Main";
 import Footer from "./components/Footer";
 import Loader from './components/Loader';
 import * as constants from './constants/constants';
+import Context from "./context";
 
 const fetchTodo = async (amountTodos = 5) => {
     const response = await axios.get(`${constants.API_URL}?_limit=${amountTodos}`);
@@ -90,17 +91,13 @@ export default function App () {
     }
 
     return (
-        <div className="wrapper">
-            { loader && <Loader/> }
-            <Header/>
-            <Main
-                todos={todos}
-                toggleTodo={toggleTodo}
-                deleteTodo={deleteTodo}
-                createTodo={createTodo}
-                editTodo={editTodo}
-            />
-            <Footer/>
-        </div>
+        <Context.Provider value={{ toggleTodo, deleteTodo, createTodo, editTodo }}>
+            <div className="wrapper">
+                { loader && <Loader/> }
+                <Header/>
+                <Main todos={todos} />
+                <Footer/>
+            </div>
+        </Context.Provider>
     );
 }
