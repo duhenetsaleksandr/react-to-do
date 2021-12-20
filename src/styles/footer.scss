@@ -1,27 +1,13 @@
+@use 'colors';
+
 .footer {
-    background-color: #193C40;
-    color: #04D9B2;
+    background-color: colors.$primary-color;
+    color: colors.$secondary-color;
 
     &__container {
         height: 50px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-    }
-}
-
-.social-icons >:not(:last-child) {
-    margin-right: 10px;
-}
-
-.social-link {
-    width: 25px;
-    height: 25px;
-    transition: all 0.2s ease;
-    color: #04D9B2;
-
-    &:hover {
-        cursor: pointer;
-        color: #F28705;
     }
 }

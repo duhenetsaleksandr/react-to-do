@@ -1,3 +1,5 @@
+@use 'colors';
+
 .loader {
   display: flex;
   justify-content: center;
@@ -7,7 +9,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #00000080;
+  background-color: colors.$shadow-color;
 }
 
 .lds-dual-ring {
@@ -23,7 +25,7 @@
     margin: 8px;
     border-radius: 50%;
     border: 6px solid;
-    border-color: #04D9B2 transparent #04D9B2 transparent;
+    border-color: colors.$secondary-color transparent colors.$secondary-color transparent;
     animation: lds-dual-ring 1.2s linear infinite;
   }
 }

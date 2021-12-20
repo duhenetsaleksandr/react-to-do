@@ -1,47 +1,27 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import '../styles/form.scss';
 
-export default class CreateToDo extends React.Component {
-    constructor(props) {
-        super(props);
-        this.refInputTodo = React.createRef();
-        this.submitForm = this.submitForm.bind(this);
-        this.focusInputTodo = this.focusInputTodo.bind(this);
-    }
+export default function CreateToDo(props) {
+    const inputValue = props.inputValue;
+    const { status } = props.editStateInfo;
+    const refInputTodo = useRef(null);
 
-    focusInputTodo() {
-        this.refInputTodo.current.focus();
-    }
+    useEffect(() => {
+        refInputTodo.current.focus();
+        refInputTodo.current.selectionStart = refInputTodo.current.value.length;
+        refInputTodo.current.selectionEnd = refInputTodo.current.value.length;
+    });
 
-    componentDidMount() {
-        this.focusInputTodo();
-    }
-
-    componentDidUpdate() {
-        this.focusInputTodo();
-    }
-
-    submitForm(event) {
-        this.props.handlerSubmitForm(event);
-    }
-
-    render() {
-        const { edit: { status }, inputValue: value } = this.props;
-
-        return (
-            <form className="form-add-todo" action="#" onSubmit={this.submitForm}>
-                <input
-                    type="text"
-                    placeholder="Enter new todo"
-                    value={value}
-                    onChange={this.props.handlerChangeInput}
-                    ref={this.refInputTodo}
-                />
-                {status ?
-                    <button disabled={!value} type="submit">Edit task</button> :
-                    <button disabled={!value} type="submit">Add task</button>
-                }
-            </form>
-        );
-    }
+    return (
+        <form className="form-add-todo" action="#" onSubmit={props.handlerSubmitForm}>
+            <input
+                type="text"
+                placeholder="Enter new todo"
+                value={inputValue}
+                onChange={props.handlerChangeInput}
+                ref={refInputTodo}
+            />
+            <button disabled={!inputValue} type="submit">{status ? 'Edit task' : 'Add task'}</button>
+        </form>
+    );
 }

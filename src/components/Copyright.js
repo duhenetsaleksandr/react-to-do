@@ -1,9 +1,5 @@
 import React from 'react';
 
-export default class Copyright extends React.Component {
-    render() {
-        return (
-            <div>©Copyright. All rights deserved.</div>
-        );
-    }
+export default function Copyright() {
+    return (<div>©Copyright. All rights deserved.</div>);
 }

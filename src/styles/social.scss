@@ -1,0 +1,17 @@
+@use 'colors';
+
+.social-icons >:not(:last-child) {
+    margin-right: 10px;
+}
+
+.social-link {
+    width: 25px;
+    height: 25px;
+    transition: all 0.2s ease;
+    color: colors.$secondary-color;
+
+    &:hover {
+        cursor: pointer;
+        color: colors.$helper-color;
+    }
+}
