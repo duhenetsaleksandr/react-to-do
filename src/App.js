@@ -30,12 +30,7 @@ export default function App () {
     }, []);
 
     const editTodoInState = (data) => {
-        setTodos((todos) => {
-            return todos.map((todo) => {
-                if (todo.id === data.id) return data;
-                return todo;
-            })
-        });
+        setTodos((todos) => todos.map((todo) => todo.id === data.id ? data : todo));
     }
 
     const toggleTodo = async (id) => {
