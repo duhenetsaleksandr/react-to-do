@@ -6,7 +6,7 @@ import Main from "./components/Main";
 import Footer from "./components/Footer";
 import Loader from './components/Loader';
 import * as constants from './constants/constants';
-import Context from './context';
+import RequestContext from './context';
 import fetchTodo from './helpers';
 
 export default function App () {
@@ -31,12 +31,9 @@ export default function App () {
     }, []);
 
     const editTodoInState = (data) => {
-        setTodos((todos) => {
-            return todos.map((todo) => {
-                if (todo.id === data.id) return data;
-                return todo;
-            })
-        });
+        setTodos((todos) => (
+            todos.map((todo) => todo.id === data.id ? data : todo)
+        ));
     }
 
     const toggleTodo = async (id) => {
@@ -87,13 +84,13 @@ export default function App () {
     }
 
     return (
-        <Context.Provider value={{ toggleTodo, deleteTodo, createTodo, editTodo }}>
+        <RequestContext.Provider value={{ toggleTodo, deleteTodo, createTodo, editTodo }}>
             <div className="wrapper">
                 { loader && <Loader/> }
                 <Header/>
                 <Main todos={todos} />
                 <Footer/>
             </div>
-        </Context.Provider>
+        </RequestContext.Provider>
     );
 }

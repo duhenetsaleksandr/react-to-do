@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import '../styles/todo-list-item.scss';
-import Context from '../context';
+import RequestContext from '../context';
 
 export default function ToDoListItem(props) {
-    const { toggleTodo, deleteTodo } = useContext(Context);
+    const { toggleTodo, deleteTodo } = useContext(RequestContext);
     const { id, title, completed } = props.todo;
     const classes = ['todos__list__item'];
     if (completed) classes.push('checked');

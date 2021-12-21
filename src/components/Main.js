@@ -2,12 +2,12 @@ import React, { useState, useContext } from 'react';
 import '../styles/main.scss';
 import CreateToDo from './CreateToDo';
 import ToDoList from './ToDoList';
-import Context from '../context';
+import RequestContext from '../context';
 
 export default function Main(props) {
     const inputInitialState = '';
     const editModeInitialState = { status: false, todo: {} };
-    const { createTodo, editTodo } = useContext(Context);
+    const { createTodo, editTodo } = useContext(RequestContext);
 
     const [ inputValue, setInputValue ] = useState(inputInitialState);
     const [ editMode, setEditMode ] = useState(editModeInitialState);
