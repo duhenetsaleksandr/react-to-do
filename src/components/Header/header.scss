@@ -1,6 +1,6 @@
-@use 'colors';
+@use '../../styles/colors';
 
-.footer {
+.header {
     background-color: colors.$primary-color;
     color: colors.$secondary-color;
 

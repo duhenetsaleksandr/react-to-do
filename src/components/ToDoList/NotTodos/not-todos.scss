@@ -1,0 +1,13 @@
+@use '../../../styles/colors';
+
+.not-todos {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    color: colors.$secondary-color;
+    padding: 50px;
+    border: 1px solid colors.$secondary-color;
+    border-radius: 5px;
+}
