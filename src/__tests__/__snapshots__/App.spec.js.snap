@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render App component App component snapshot should render App component snapshot if fetch data from API fail 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "darkTheme": true,
+      "switchTheme": [Function],
+    }
+  }
+>
+  <div
+    className="wrapper"
+  >
+    <Header />
+    <Main
+      createTodo={[Function]}
+      deleteTodo={[Function]}
+      editTodo={[Function]}
+      todos={Array []}
+      toggleTodo={[Function]}
+    />
+    <Footer />
+  </div>
+</ContextProvider>
+`;
+
+exports[`should render App component App component snapshot should render App component snapshot if fetch data from API success 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "darkTheme": true,
+      "switchTheme": [Function],
+    }
+  }
+>
+  <div
+    className="wrapper"
+  >
+    <Header />
+    <Main
+      createTodo={[Function]}
+      deleteTodo={[Function]}
+      editTodo={[Function]}
+      todos={Array []}
+      toggleTodo={[Function]}
+    />
+    <Footer />
+  </div>
+</ContextProvider>
+`;

@@ -1,1 +1,1 @@
-export {default} from './NotTodos';
+export { default } from './NotTodos';

@@ -1,5 +1,5 @@
 import React from 'react';
-import './not-todos.scss';
+import './NotTodos.scss';
 
 const NotTodos = () => (<div className="not-todos">Not found todos!</div>);
 

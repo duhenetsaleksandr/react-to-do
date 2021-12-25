@@ -1,5 +1,5 @@
 import React from 'react';
-import './todo-list-item.scss';
+import './ToDoListItem.scss';
 
 const ToDoListItem = ({ todo, deleteTodo, onEdit, toggleTodo }) => {
     const { id, title, completed } = todo;

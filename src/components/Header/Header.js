@@ -1,13 +1,19 @@
-import React from 'react';
-import './header.scss';
-import { Logo } from '../common';
+import React, { useContext } from 'react';
+import ThemeContext from 'Context/ThemeContext';
+import './Header.scss';
+import Logo from 'components/common/Logo';
+import SwitcherTheme from 'components/SwitcherTheme';
 
-const Header = () => (
-    <header className="header">
-        <div className="container header__container">
-            <Logo/>
-        </div>
-    </header>
-);
+const Header = () => {
+    const { darkTheme } = useContext(ThemeContext);
+    return (
+        <header className={`header ${darkTheme ? 'dark' : 'light'}`}>
+            <div className="container header__container">
+                <Logo/>
+                <SwitcherTheme/>
+            </div>
+        </header>
+    );
+};
 
 export default Header;

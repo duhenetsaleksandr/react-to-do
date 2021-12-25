@@ -1,15 +1,19 @@
-import React from 'react';
-import './footer.scss';
-import Social from '../Social';
-import Copyright from '../Copyright';
+import React, { useContext } from 'react';
+import ThemeContext from 'Context/ThemeContext';
+import './Footer.scss';
+import Social from 'components/Social/Social';
+import Copyright from 'components/Copyright';
 
-const Footer = () => (
-    <footer className="footer">
-        <div className="container footer__container">
-            <Copyright/>
-            <Social/>
-        </div>
-    </footer>
-);
+const Footer = () => {
+    const { darkTheme } = useContext(ThemeContext);
+    return (
+        <footer className={`footer ${darkTheme ? 'dark' : 'light'}`}>
+            <div className="container footer__container">
+                <Copyright/>
+                <Social/>
+            </div>
+        </footer>
+    );
+};
 
 export default Footer;

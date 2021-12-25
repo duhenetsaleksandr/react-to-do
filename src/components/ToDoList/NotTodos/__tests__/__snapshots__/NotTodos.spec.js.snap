@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render NotTodos component should render NotTodos component snapshot 1`] = `
+<div
+  className="not-todos"
+>
+  Not found todos!
+</div>
+`;

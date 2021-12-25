@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render SocialLink component should render SocialLink component snapshot with all props 1`] = `
+<a
+  href="https://t.me/duhenets"
+  rel="noopener noreferrer"
+  target="_blank"
+  title="telegram"
+>
+  <div
+    className="test-class"
+  >
+    TestProps
+  </div>
+</a>
+`;

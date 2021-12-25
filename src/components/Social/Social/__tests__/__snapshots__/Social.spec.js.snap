@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Social component should render Social component snapshot 1`] = `
+<div
+  className="social-icons"
+>
+  <SocialLink
+    link="https://t.me/duhenets"
+    title="telegram"
+  >
+    <ForwardRef(SvgTelegram)
+      className="social-link dark"
+    />
+  </SocialLink>
+  <SocialLink
+    link="https://www.instagram.com/duhenets_aleksandr/"
+    title="instagram"
+  >
+    <ForwardRef(SvgInstagram)
+      className="social-link dark"
+    />
+  </SocialLink>
+</div>
+`;

@@ -1,7 +1,7 @@
 import React from 'react';
-import './todo-list.scss';
-import ToDoListItem from "../ToDoListItem";
-import NotTodos from '../NotTodos';
+import './ToDoList.scss';
+import ToDoListItem from 'components/ToDoList/ToDoListItem';
+import NotTodos from 'components/ToDoList/NotTodos';
 
 const ToDoList = ({ todos, onEdit, toggleTodo, deleteTodo}) => (
     <ul className="todos__list">

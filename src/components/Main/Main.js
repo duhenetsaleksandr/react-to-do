@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './main.scss';
-import CreateToDo from '../CreateToDo';
-import ToDoList from '../ToDoList';
+import './Main.scss';
+import CreateToDo from 'components/CreateToDo/CreateToDo';
+import ToDoList from 'components/ToDoList/ToDoList';
 
 const initialState = {
     editMode: {

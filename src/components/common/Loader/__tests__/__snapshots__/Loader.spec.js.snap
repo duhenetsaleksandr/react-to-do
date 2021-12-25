@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Loader component should render Loader component snapshot 1`] = `
+<div
+  className="loader"
+>
+  <div
+    className="lds-dual-ring"
+  />
+</div>
+`;

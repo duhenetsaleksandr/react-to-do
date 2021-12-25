@@ -1,0 +1,22 @@
+@use 'src/styles/colors';
+
+.footer {
+    transition: all 0.2s ease;
+
+    &__container {
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &.dark {
+        background-color: colors.$primary-color;
+        color: colors.$secondary-color;
+    }
+
+    &.light {
+        background-color: colors.$secondary-color;
+        color: colors.$primary-color;
+    }
+}
