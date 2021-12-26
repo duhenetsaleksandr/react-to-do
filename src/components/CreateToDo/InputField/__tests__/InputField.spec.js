@@ -1,9 +1,9 @@
 import React from 'react';
-import InputField from '../InputField';
-import { act } from "@testing-library/react";
 import { IntlProvider } from 'react-intl';
+import { act } from "@testing-library/react";
 import { messages } from "i18n/messages";
 import { LOCALES } from "i18n/locales";
+import InputField from '../InputField';
 
 const props = {
     editTodo: {},

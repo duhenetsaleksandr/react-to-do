@@ -1,9 +1,9 @@
 import React from 'react';
-import { act } from '@testing-library/react';
-import Main from '../Main';
 import { IntlProvider } from 'react-intl';
+import { act } from '@testing-library/react';
 import { messages } from 'i18n/messages';
 import { LOCALES } from 'i18n/locales';
+import Main from '../Main';
 
 const todos = [
     {

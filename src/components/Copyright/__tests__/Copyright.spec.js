@@ -1,8 +1,8 @@
 import React from 'react';
 import Copyright from '../Copyright';
 import {IntlProvider} from "react-intl";
-import {messages} from "../../../i18n/messages";
-import {LOCALES} from "../../../i18n/locales";
+import {messages} from "i18n/messages";
+import {LOCALES} from "i18n/locales";
 
 describe('should render Copyright component', () => {
     let component;

@@ -1,9 +1,9 @@
 import React from 'react';
+import { IntlProvider } from 'react-intl';
+import { act } from '@testing-library/react';
 import CreateToDo from '../CreateToDo';
-import { act } from "@testing-library/react";
-import { IntlProvider } from "react-intl";
-import { messages } from "i18n/messages";
-import { LOCALES } from "i18n/locales";
+import { messages } from 'i18n/messages';
+import { LOCALES } from 'i18n/locales';
 
 const props = {
     editStateInfo: {

@@ -1,9 +1,9 @@
 import React from 'react';
-import Footer from '../Footer';
-import ThemeContext from 'Context/ThemeContext';
 import { IntlProvider } from 'react-intl';
+import ThemeContext from 'Context/ThemeContext';
 import { messages } from 'i18n/messages';
 import { LOCALES } from 'i18n/locales';
+import Footer from '../Footer';
 
 describe('should render Footer component', () => {
     let component;
