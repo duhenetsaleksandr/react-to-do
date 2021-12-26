@@ -16,7 +16,7 @@ const CreateToDo = ({ editStateInfo, createTodo, editTodo, clearEditMode }) => {
         event.preventDefault();
         if (!status) {
             state.inputResult && createTodo(state.inputResult);
-            setState({ ...state, flagCreated: !state.flagCreated });
+            setState((prevState) => ({ ...prevState, flagCreated: !prevState.flagCreated }));
         } else {
             state.inputResult && editTodo(todo.id, state.inputResult);
         }
@@ -24,7 +24,7 @@ const CreateToDo = ({ editStateInfo, createTodo, editTodo, clearEditMode }) => {
     }
 
     const handlerChangeInput = (value) => {
-        setState({ ...state, inputResult: value });
+        setState((prevState) => ({ ...prevState, inputResult: value }));
     };
 
     return (
