@@ -13,7 +13,9 @@ exports[`should render CreateToDo component with custom props should render Crea
   <button
     type="submit"
   >
-    Add task
+    <MemoizedFormattedMessage
+      id="button_add"
+    />
   </button>
 </form>
 `;

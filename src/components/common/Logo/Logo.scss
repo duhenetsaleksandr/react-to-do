@@ -1,6 +1,7 @@
 @use 'src/styles/colors';
 
 .logo {
+    flex: 1 0 auto;
     height: 30px;
     display: flex;
     align-items: center;

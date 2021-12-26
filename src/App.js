@@ -1,16 +1,21 @@
-import './App.scss';
 import React, { useState, useEffect } from 'react';
+import ThemeContext from './Context/ThemeContext';
+import { IntlProvider } from 'react-intl';
+import './App.scss';
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
 import Loader from './components/common/Loader';
 import { fetchTodoAPI, createTodoAPI, editTodoAPI, deleteTodoAPI } from './helpers/requestAPI';
-import ThemeContext from './Context/ThemeContext';
+
+import { LOCALES } from 'i18n/locales';
+import { messages } from 'i18n/messages';
 
 const initialState = {
     isLoading: false,
     todos: [],
     darkTheme: true,
+    locale: LOCALES.ENGLISH,
 };
 
 const App = () => {
@@ -84,20 +89,26 @@ const App = () => {
         setState({ ...state, darkTheme: !state.darkTheme });
     };
 
+    const switchLang = ({ target: { value } }) => {
+        setState({ ...state, locale: value });
+    };
+
     return (
         <ThemeContext.Provider value={{ darkTheme: state.darkTheme, switchTheme }}>
-            <div className="wrapper">
-                { state.isLoading && <Loader/> }
-                <Header/>
-                <Main
-                    todos={state.todos}
-                    toggleTodo={toggleTodo}
-                    deleteTodo={deleteTodo}
-                    createTodo={createTodo}
-                    editTodo={editTodo}
-                />
-                <Footer/>
-            </div>
+            <IntlProvider messages={messages[state.locale]} locale={state.locale} defaultLocale={LOCALES.ENGLISH}>
+                <div className="wrapper">
+                    { state.isLoading && <Loader/> }
+                    <Header currentLang={state.locale} onChangeLocale={switchLang}/>
+                    <Main
+                        todos={state.todos}
+                        toggleTodo={toggleTodo}
+                        deleteTodo={deleteTodo}
+                        createTodo={createTodo}
+                        editTodo={editTodo}
+                    />
+                    <Footer/>
+                </div>
+            </IntlProvider>
         </ThemeContext.Provider>
     );
 }

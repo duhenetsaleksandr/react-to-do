@@ -1,5 +1,10 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 
-const Copyright = () => (<div>©Copyright. All rights deserved.</div>);
+const Copyright = () => (
+    <div>
+        <FormattedMessage id="copyright" />
+    </div>
+);
 
 export default Copyright;

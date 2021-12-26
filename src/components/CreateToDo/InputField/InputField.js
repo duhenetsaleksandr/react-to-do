@@ -1,10 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useIntl } from 'react-intl'
 
 const initialState = '';
 
 const InputField = ({ editTodo, onCreated }) => {
     const refInputTodo = useRef(null);
     const [ inputValue, setInputValue ] = useState(initialState);
+    const intl = useIntl();
 
     useEffect(() => {
         focusInput();
@@ -25,7 +27,7 @@ const InputField = ({ editTodo, onCreated }) => {
     return (
         <input
             type="text"
-            placeholder="Enter new todo"
+            placeholder={intl.formatMessage({ id: 'placeholder' })}
             value={inputValue}
             onChange={handlerChangeInput}
             ref={refInputTodo}

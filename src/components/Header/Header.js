@@ -3,13 +3,15 @@ import ThemeContext from 'Context/ThemeContext';
 import './Header.scss';
 import Logo from 'components/common/Logo';
 import SwitcherTheme from 'components/SwitcherTheme';
+import SwitcherLang from "components/SwitcherLang";
 
-const Header = () => {
+const Header = ({ currentLang, onChangeLocale }) => {
     const { darkTheme } = useContext(ThemeContext);
     return (
         <header className={`header ${darkTheme ? 'dark' : 'light'}`}>
             <div className="container header__container">
                 <Logo/>
+                <SwitcherLang currentLang={currentLang} onChangeLocale={onChangeLocale}/>
                 <SwitcherTheme/>
             </div>
         </header>

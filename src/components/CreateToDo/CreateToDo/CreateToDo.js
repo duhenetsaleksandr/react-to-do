@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FormattedMessage } from 'react-intl';
 import './CreateToDo.scss';
 import InputField from 'components/CreateToDo/InputField';
 
@@ -21,7 +22,9 @@ const CreateToDo = ({ editStateInfo, createTodo, editTodo, clearEditMode }) => {
     return (
         <form className="form-add-todo" name="create-to-do-form" onSubmit={handlerSubmitForm}>
             <InputField editTodo={todo} onCreated={example} />
-            <button type="submit">{status ? 'Edit task' : 'Add task'}</button>
+            <button type="submit">
+                { status ? <FormattedMessage id="button_edit" /> : <FormattedMessage id="button_add" /> }
+            </button>
         </form>
     );
 }
