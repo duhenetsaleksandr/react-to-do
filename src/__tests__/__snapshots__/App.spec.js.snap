@@ -9,19 +9,40 @@ exports[`should render App component App component snapshot should render App co
     }
   }
 >
-  <div
-    className="wrapper"
+  <IntlProvider
+    defaultFormats={Object {}}
+    defaultLocale="en-US"
+    fallbackOnEmptyString={true}
+    formats={Object {}}
+    locale="en-US"
+    messages={
+      Object {
+        "button_add": "Add task",
+        "button_edit": "Edit task",
+        "copyright": "©Copyright. All rights deserved.",
+        "placeholder": "Enter new todo",
+      }
+    }
+    onError={[Function]}
+    textComponent={Symbol(react.fragment)}
   >
-    <Header />
-    <Main
-      createTodo={[Function]}
-      deleteTodo={[Function]}
-      editTodo={[Function]}
-      todos={Array []}
-      toggleTodo={[Function]}
-    />
-    <Footer />
-  </div>
+    <div
+      className="wrapper"
+    >
+      <Header
+        currentLang="en-US"
+        onChangeLocale={[Function]}
+      />
+      <Main
+        createTodo={[Function]}
+        deleteTodo={[Function]}
+        editTodo={[Function]}
+        todos={Array []}
+        toggleTodo={[Function]}
+      />
+      <Footer />
+    </div>
+  </IntlProvider>
 </ContextProvider>
 `;
 
@@ -34,18 +55,39 @@ exports[`should render App component App component snapshot should render App co
     }
   }
 >
-  <div
-    className="wrapper"
+  <IntlProvider
+    defaultFormats={Object {}}
+    defaultLocale="en-US"
+    fallbackOnEmptyString={true}
+    formats={Object {}}
+    locale="en-US"
+    messages={
+      Object {
+        "button_add": "Add task",
+        "button_edit": "Edit task",
+        "copyright": "©Copyright. All rights deserved.",
+        "placeholder": "Enter new todo",
+      }
+    }
+    onError={[Function]}
+    textComponent={Symbol(react.fragment)}
   >
-    <Header />
-    <Main
-      createTodo={[Function]}
-      deleteTodo={[Function]}
-      editTodo={[Function]}
-      todos={Array []}
-      toggleTodo={[Function]}
-    />
-    <Footer />
-  </div>
+    <div
+      className="wrapper"
+    >
+      <Header
+        currentLang="en-US"
+        onChangeLocale={[Function]}
+      />
+      <Main
+        createTodo={[Function]}
+        deleteTodo={[Function]}
+        editTodo={[Function]}
+        todos={Array []}
+        toggleTodo={[Function]}
+      />
+      <Footer />
+    </div>
+  </IntlProvider>
 </ContextProvider>
 `;

@@ -1,6 +1,9 @@
-import React from "react";
-import { act } from "@testing-library/react";
-import Main from "../Main";
+import React from 'react';
+import { act } from '@testing-library/react';
+import Main from '../Main';
+import { IntlProvider } from 'react-intl';
+import { messages } from 'i18n/messages';
+import { LOCALES } from 'i18n/locales';
 
 const todos = [
     {
@@ -33,7 +36,14 @@ const initialState = {
 describe('should render Main component', () => {
     let component;
     beforeEach(() => {
-        component = mount(<Main {...props} />);
+        component = mount(<Main {...props} />, {
+            wrappingComponent: IntlProvider,
+            wrappingComponentProps: {
+                messages: messages[LOCALES.ENGLISH],
+                locale: LOCALES.ENGLISH,
+                defaultLocale: LOCALES.ENGLISH,
+            },
+        });
     });
 
     it('should contain tag main with class .main', () => {

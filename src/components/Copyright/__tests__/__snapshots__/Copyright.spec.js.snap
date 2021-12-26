@@ -2,6 +2,8 @@
 
 exports[`should render Copyright component should render Copyright component snapshot 1`] = `
 <div>
-  ©Copyright. All rights deserved.
+  <MemoizedFormattedMessage
+    id="copyright"
+  />
 </div>
 `;

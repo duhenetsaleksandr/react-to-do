@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { act } from "@testing-library/react";
 import App from '../App';
+import { LOCALES } from "../i18n/locales";
 
 jest.mock('axios');
 
@@ -42,6 +43,16 @@ describe('should render App component', () => {
                 component = mount(<App/>);
             });
             component.update();
+        });
+
+        it('should change locale in state', () => {
+            const header = component.find('Header');
+            expect(header.getElement().props.currentLang).toBe(LOCALES.ENGLISH);
+            act(() => {
+                header.getElement().props.onChangeLocale({ target: { value: LOCALES.RUSSIAN } });
+            });
+            component.update();
+            expect(component.find('Header').getElement().props.currentLang).toBe(LOCALES.RUSSIAN);
         });
 
         it('should success fetch data after mounted App component and set data in state', async () => {

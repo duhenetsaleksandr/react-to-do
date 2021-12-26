@@ -8,6 +8,7 @@ exports[`should render Header component should render Header component snapshot 
     className="container header__container"
   >
     <Logo />
+    <SwitcherLang />
     <SwitcherTheme />
   </div>
 </header>

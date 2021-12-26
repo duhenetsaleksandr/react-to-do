@@ -1,10 +1,53 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render InputField component should render InputField component snapshot 1`] = `
-<input
-  onChange={[Function]}
-  placeholder="Enter new todo"
-  type="text"
-  value=""
-/>
+<ContextProvider
+  value={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en-US",
+      "defaultRichTextElements": undefined,
+      "fallbackOnEmptyString": true,
+      "formatDate": [Function],
+      "formatDateTimeRange": [Function],
+      "formatDateToParts": [Function],
+      "formatDisplayName": [Function],
+      "formatList": [Function],
+      "formatListToParts": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatNumberToParts": [Function],
+      "formatPlural": [Function],
+      "formatRelativeTime": [Function],
+      "formatTime": [Function],
+      "formatTimeToParts": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getDisplayNames": [Function],
+        "getListFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralRules": [Function],
+        "getRelativeTimeFormat": [Function],
+      },
+      "locale": "en-US",
+      "messages": Object {
+        "button_add": "Add task",
+        "button_edit": "Edit task",
+        "copyright": "©Copyright. All rights deserved.",
+        "placeholder": "Enter new todo",
+      },
+      "onError": [Function],
+      "textComponent": Symbol(react.fragment),
+      "timeZone": undefined,
+      "wrapRichTextChunksInFragment": undefined,
+    }
+  }
+>
+  <InputField
+    editTodo={Object {}}
+    onCreated={true}
+  />
+</ContextProvider>
 `;

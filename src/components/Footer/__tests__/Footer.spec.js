@@ -1,11 +1,21 @@
 import React from 'react';
 import Footer from '../Footer';
 import ThemeContext from 'Context/ThemeContext';
+import { IntlProvider } from 'react-intl';
+import { messages } from 'i18n/messages';
+import { LOCALES } from 'i18n/locales';
 
 describe('should render Footer component', () => {
     let component;
     beforeEach(() => {
-        component = mount(<Footer/>);
+        component = mount(<Footer/>, {
+            wrappingComponent: IntlProvider,
+            wrappingComponentProps: {
+                messages: messages[LOCALES.ENGLISH],
+                locale: LOCALES.ENGLISH,
+                defaultLocale: LOCALES.ENGLISH,
+            },
+        });
     });
 
     it('should contain tag footer with class .footer', () => {
@@ -29,11 +39,17 @@ describe('should render Footer component', () => {
     });
 
     it('should render Footer with light theme using context', () => {
+        const WrapperContext = ({ children }) => {
+            return (
+                <ThemeContext.Provider value={{ darkTheme : false }}>
+                    <IntlProvider messages={messages[LOCALES.ENGLISH]} locale={LOCALES.ENGLISH} defaultLocale={LOCALES.ENGLISH}>
+                        { children }
+                    </IntlProvider>
+                </ThemeContext.Provider>
+            );
+        };
         const component = mount(<Footer/>, {
-            wrappingComponent: ThemeContext.Provider,
-            wrappingComponentProps: {
-                value: { darkTheme: false },
-            },
+            wrappingComponent: WrapperContext
         });
 
         const footer = component.find('footer.footer.light');
@@ -41,11 +57,17 @@ describe('should render Footer component', () => {
     });
 
     it('should render Footer with dark theme using context', () => {
+        const WrapperContext = ({ children }) => {
+            return (
+                <ThemeContext.Provider value={{ darkTheme : true }}>
+                    <IntlProvider messages={messages[LOCALES.ENGLISH]} locale={LOCALES.ENGLISH} defaultLocale={LOCALES.ENGLISH}>
+                        { children }
+                    </IntlProvider>
+                </ThemeContext.Provider>
+            );
+        };
         const component = mount(<Footer/>, {
-            wrappingComponent: ThemeContext.Provider,
-            wrappingComponentProps: {
-                value: { darkTheme: true },
-            },
+            wrappingComponent: WrapperContext
         });
 
         const footer = component.find('footer.footer.dark');
