@@ -8,6 +8,7 @@ exports[`should render CreateToDo component with custom props should render Crea
 >
   <InputField
     editTodo={Object {}}
+    handlerBlurInput={[Function]}
     onCreated={true}
   />
   <button

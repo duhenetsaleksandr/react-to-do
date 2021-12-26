@@ -47,6 +47,7 @@ exports[`should render InputField component should render InputField component s
 >
   <InputField
     editTodo={Object {}}
+    handlerBlurInput={[MockFunction]}
     onCreated={true}
   />
 </ContextProvider>

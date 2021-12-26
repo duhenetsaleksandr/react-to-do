@@ -7,12 +7,14 @@ import { LOCALES } from "i18n/locales";
 
 const props = {
     editTodo: {},
-    onCreated: true
+    onCreated: true,
+    handlerBlurInput: jest.fn(),
 };
 
 describe('should render InputField component', () => {
-    it('should change input value in state with onChange event', () => {
-        const component = mount(<InputField {...props} />, {
+    let component;
+    beforeEach(() => {
+        component = mount(<InputField {...props} />, {
             wrappingComponent: IntlProvider,
             wrappingComponentProps: {
                 messages: messages[LOCALES.ENGLISH],
@@ -20,6 +22,33 @@ describe('should render InputField component', () => {
                 defaultLocale: LOCALES.ENGLISH,
             },
         });
+    });
+
+    it('should call handlerBlurInput props after keydown Enter', () => {
+        act(() => {
+            component.find('input').getElement().props.onChange({ target: { value: 'example test' } });
+        });
+        component.update();
+        act(() => {
+            component.find('input').getElement().props.onKeyDown({ code: 'Enter' });
+        });
+        component.update();
+        expect(props.handlerBlurInput).toHaveBeenCalledWith('example test');
+    });
+
+    it('should not call handlerBlurInput props after keydown not Enter', () => {
+        act(() => {
+            component.find('input').getElement().props.onChange({ target: { value: 'example test' } });
+        });
+        component.update();
+        act(() => {
+            component.find('input').getElement().props.onKeyDown({ code: 'Escape' });
+        });
+        component.update();
+        expect(props.handlerBlurInput).not.toHaveBeenCalled();
+    });
+
+    it('should change input value in state with onChange event', () => {
         act(() => {
             component.find('input[type="text"]').getElement().props.onChange({ target: { value: 1 } });
         });
@@ -28,14 +57,6 @@ describe('should render InputField component', () => {
     });
 
     it('should change input value in state after update props', () => {
-        const component = mount(<InputField {...props} />, {
-            wrappingComponent: IntlProvider,
-            wrappingComponentProps: {
-                messages: messages[LOCALES.ENGLISH],
-                locale: LOCALES.ENGLISH,
-                defaultLocale: LOCALES.ENGLISH,
-            },
-        });
         act(() => {
             component.setProps({
                 editTodo: {

@@ -3,7 +3,7 @@ import { useIntl } from 'react-intl'
 
 const initialState = '';
 
-const InputField = ({ editTodo, onCreated }) => {
+const InputField = ({ editTodo, onCreated, handlerBlurInput }) => {
     const refInputTodo = useRef(null);
     const [ inputValue, setInputValue ] = useState(initialState);
     const intl = useIntl();
@@ -14,8 +14,8 @@ const InputField = ({ editTodo, onCreated }) => {
         setInputValue(currentState);
     }, [editTodo, onCreated]);
 
-    const handlerChangeInput = (event) => {
-        setInputValue(event.target.value);
+    const handlerChangeInput = ({ target: { value } }) => {
+        setInputValue(value);
     };
 
     const focusInput = () => {
@@ -24,12 +24,18 @@ const InputField = ({ editTodo, onCreated }) => {
         refInputTodo.current.selectionEnd = refInputTodo.current.value.length;
     };
 
+    const handlerKeyDown = ({ code }) => {
+        if (code === 'Enter') handlerBlurInput(inputValue);
+    };
+
     return (
         <input
             type="text"
             placeholder={intl.formatMessage({ id: 'placeholder' })}
             value={inputValue}
             onChange={handlerChangeInput}
+            onBlur={handlerBlurInput.bind(null, inputValue)}
+            onKeyDown={handlerKeyDown}
             ref={refInputTodo}
         />
     );

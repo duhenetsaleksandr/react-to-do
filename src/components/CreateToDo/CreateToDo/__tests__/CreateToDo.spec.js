@@ -48,16 +48,20 @@ describe('should render CreateToDo component', () => {
         it('should call clearEditMode props function', () => {
             const form = component.find('form[name="create-to-do-form"]');
             act(() => {
-                form.getElement().props.onSubmit({ preventDefault: jest.fn(), target: {firstElementChild: {value: ''}} });
+                form.getElement().props.onSubmit({ preventDefault: jest.fn() });
             });
             expect(props.clearEditMode).toHaveBeenCalledTimes(1);
         });
 
         it('should call createTodo props function', () => {
-            const form = component.find('form[name="create-to-do-form"]');
             act(() => {
-                form.getElement().props.onSubmit({ preventDefault: jest.fn(), target: {firstElementChild: {value: 'example'}} });
+                component.find('InputField').getElement().props.handlerBlurInput('example');
             });
+            component.update();
+            act(() => {
+                component.find('form[name="create-to-do-form"]').getElement().props.onSubmit({ preventDefault: jest.fn() });
+            });
+            component.update();
             expect(props.createTodo).toHaveBeenCalledWith('example');
         });
     });
@@ -86,10 +90,14 @@ describe('should render CreateToDo component', () => {
                     defaultLocale: LOCALES.ENGLISH,
                 },
             });
-            const form = component.find('form[name="create-to-do-form"]');
             act(() => {
-                form.getElement().props.onSubmit({ preventDefault: jest.fn(), target: {firstElementChild: {value: 'example'}} });
+                component.find('InputField').getElement().props.handlerBlurInput('example');
             });
+            component.update();
+            act(() => {
+                component.find('form[name="create-to-do-form"]').getElement().props.onSubmit({ preventDefault: jest.fn() });
+            });
+            component.update();
             expect(props.editTodo).toHaveBeenCalledWith(1, 'example');
         });
 
