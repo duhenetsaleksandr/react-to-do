@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import ThemeContext from './Context/ThemeContext';
+import ThemeContext from 'Context/ThemeContext';
 import { IntlProvider } from 'react-intl';
 import './App.scss';
-import Header from "./components/Header";
-import Main from "./components/Main";
-import Footer from "./components/Footer";
-import Loader from './components/common/Loader';
-import { fetchTodoAPI, createTodoAPI, editTodoAPI, deleteTodoAPI } from './helpers/requestAPI';
+import Header from "components/Header";
+import Main from "components/Main";
+import Footer from "components/Footer";
+import Loader from 'components/common/Loader';
+import { fetchTodoAPI, createTodoAPI, editTodoAPI, deleteTodoAPI } from 'helpers/requestAPI';
 
 import { LOCALES } from 'i18n/locales';
 import { messages } from 'i18n/messages';

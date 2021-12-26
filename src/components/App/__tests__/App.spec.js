@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { act } from "@testing-library/react";
 import App from '../App';
-import { LOCALES } from "../i18n/locales";
+import { LOCALES } from "i18n/locales";
 
 jest.mock('axios');
 
