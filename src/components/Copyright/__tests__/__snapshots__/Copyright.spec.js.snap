@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render Copyright component should render Copyright component snapshot 1`] = `
-<div>
+<Fragment>
   <MemoizedFormattedMessage
     id="copyright"
   />
-</div>
+</Fragment>
 `;

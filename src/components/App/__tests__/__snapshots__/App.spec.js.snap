@@ -20,6 +20,7 @@ exports[`should render App component App component snapshot should render App co
         "button_add": "Add task",
         "button_edit": "Edit task",
         "copyright": "©Copyright. All rights deserved.",
+        "not_todos": "Not found todos!",
         "placeholder": "Enter new todo",
       }
     }
@@ -66,6 +67,7 @@ exports[`should render App component App component snapshot should render App co
         "button_add": "Add task",
         "button_edit": "Edit task",
         "copyright": "©Copyright. All rights deserved.",
+        "not_todos": "Not found todos!",
         "placeholder": "Enter new todo",
       }
     }

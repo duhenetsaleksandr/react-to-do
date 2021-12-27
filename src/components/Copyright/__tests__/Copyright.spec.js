@@ -18,12 +18,12 @@ describe('should render Copyright component', () => {
     });
 
     it('should contain one div', () => {
-        expect(component.find('div')).toHaveLength(1);
+        expect(component.find('FormattedMessage')).toHaveLength(1);
     });
 
     it('should contain text "copyright"', () => {
-        const element = component.find('div');
-        expect(element.getElement().props.children.props.id).toBe('copyright');
+        const element = component.find('FormattedMessage');
+        expect(element.getElement().props.id).toBe('copyright');
     });
 
     it('should render Copyright component snapshot', () => {

@@ -7,9 +7,9 @@ exports[`should render CreateToDo component with custom props should render Crea
   onSubmit={[Function]}
 >
   <InputField
-    editTodo={Object {}}
-    handlerBlurInput={[Function]}
-    onCreated={true}
+    editedTodo={Object {}}
+    flagCreated={true}
+    onBlurInput={[Function]}
   />
   <button
     type="submit"

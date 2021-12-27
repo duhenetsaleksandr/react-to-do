@@ -55,7 +55,7 @@ describe('should render CreateToDo component', () => {
 
         it('should call createTodo props function', () => {
             act(() => {
-                component.find('InputField').getElement().props.handlerBlurInput('example');
+                component.find('InputField').getElement().props.onBlurInput('example');
             });
             component.update();
             act(() => {
@@ -91,7 +91,7 @@ describe('should render CreateToDo component', () => {
                 },
             });
             act(() => {
-                component.find('InputField').getElement().props.handlerBlurInput('example');
+                component.find('InputField').getElement().props.onBlurInput('example');
             });
             component.update();
             act(() => {
@@ -99,6 +99,26 @@ describe('should render CreateToDo component', () => {
             });
             component.update();
             expect(props.editTodo).toHaveBeenCalledWith(1, 'example');
+        });
+
+        it('should not call editTodo props function', () => {
+            const component = mount(<CreateToDo {...props} editStateInfo={{status: true, todo: {id: 1}}} />, {
+                wrappingComponent: IntlProvider,
+                wrappingComponentProps: {
+                    messages: messages[LOCALES.ENGLISH],
+                    locale: LOCALES.ENGLISH,
+                    defaultLocale: LOCALES.ENGLISH,
+                },
+            });
+            act(() => {
+                component.find('InputField').getElement().props.onBlurInput('');
+            });
+            component.update();
+            act(() => {
+                component.find('form[name="create-to-do-form"]').getElement().props.onSubmit({ preventDefault: jest.fn() });
+            });
+            component.update();
+            expect(props.editTodo).not.toHaveBeenCalled();
         });
 
         it('should render CreateToDo component snapshot', () => {

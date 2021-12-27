@@ -6,9 +6,9 @@ import { LOCALES } from "i18n/locales";
 import InputField from '../InputField';
 
 const props = {
-    editTodo: {},
-    onCreated: true,
-    handlerBlurInput: jest.fn(),
+    editedTodo: {},
+    flagCreated: true,
+    onBlurInput: jest.fn(),
 };
 
 describe('should render InputField component', () => {
@@ -33,7 +33,7 @@ describe('should render InputField component', () => {
             component.find('input').getElement().props.onKeyDown({ code: 'Enter' });
         });
         component.update();
-        expect(props.handlerBlurInput).toHaveBeenCalledWith('example test');
+        expect(props.onBlurInput).toHaveBeenCalledWith('example test');
     });
 
     it('should not call handlerBlurInput props after keydown not Enter', () => {
@@ -45,7 +45,7 @@ describe('should render InputField component', () => {
             component.find('input').getElement().props.onKeyDown({ code: 'Escape' });
         });
         component.update();
-        expect(props.handlerBlurInput).not.toHaveBeenCalled();
+        expect(props.onBlurInput).not.toHaveBeenCalled();
     });
 
     it('should change input value in state with onChange event', () => {
@@ -59,10 +59,10 @@ describe('should render InputField component', () => {
     it('should change input value in state after update props', () => {
         act(() => {
             component.setProps({
-                editTodo: {
+                editedTodo: {
                     title: 'For test'
                 },
-                onCreated: true
+                flagCreated: true
             });
         });
         component.update();

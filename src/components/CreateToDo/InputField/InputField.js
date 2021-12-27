@@ -3,16 +3,16 @@ import { useIntl } from 'react-intl'
 
 const initialState = '';
 
-const InputField = ({ editTodo, onCreated, handlerBlurInput }) => {
+const InputField = ({ editedTodo, flagCreated, onBlurInput }) => {
     const refInputTodo = useRef(null);
     const [ inputValue, setInputValue ] = useState(initialState);
     const intl = useIntl();
 
     useEffect(() => {
         focusInput();
-        const currentState = editTodo.title ? editTodo.title : initialState;
+        const currentState = editedTodo.title ? editedTodo.title : initialState;
         setInputValue(currentState);
-    }, [editTodo, onCreated]);
+    }, [editedTodo, flagCreated]);
 
     const handlerChangeInput = ({ target: { value } }) => {
         setInputValue(value);
@@ -25,7 +25,7 @@ const InputField = ({ editTodo, onCreated, handlerBlurInput }) => {
     };
 
     const handlerKeyDown = ({ code }) => {
-        if (code === 'Enter') handlerBlurInput(inputValue);
+        if (code === 'Enter') onBlurInput(inputValue);
     };
 
     return (
@@ -34,7 +34,7 @@ const InputField = ({ editTodo, onCreated, handlerBlurInput }) => {
             placeholder={intl.formatMessage({ id: 'placeholder' })}
             value={inputValue}
             onChange={handlerChangeInput}
-            onBlur={handlerBlurInput.bind(null, inputValue)}
+            onBlur={onBlurInput.bind(null, inputValue)}
             onKeyDown={handlerKeyDown}
             ref={refInputTodo}
         />

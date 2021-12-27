@@ -1,5 +1,8 @@
 import React from 'react';
 import ToDoList from '../ToDoList';
+import { IntlProvider } from 'react-intl';
+import { messages } from 'i18n/messages';
+import { LOCALES } from 'i18n/locales';
 
 const todos = [
     {
@@ -50,7 +53,14 @@ describe('should render ToDoList component', () => {
 
     describe('with custom props', () => {
         it('should contain NotTodos component if todos array is empty', () => {
-            const component = mount(<ToDoList {...props} todos={[]} />);
+            const component = mount(<ToDoList {...props} todos={[]} />, {
+                wrappingComponent: IntlProvider,
+                wrappingComponentProps: {
+                    messages: messages[LOCALES.ENGLISH],
+                    locale: LOCALES.ENGLISH,
+                    defaultLocale: LOCALES.ENGLISH,
+                },
+            });
             const notTodos = component.find('NotTodos');
             expect(notTodos).toHaveLength(1);
         });

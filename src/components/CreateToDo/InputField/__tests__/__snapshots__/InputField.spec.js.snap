@@ -36,6 +36,7 @@ exports[`should render InputField component should render InputField component s
         "button_add": "Add task",
         "button_edit": "Edit task",
         "copyright": "©Copyright. All rights deserved.",
+        "not_todos": "Not found todos!",
         "placeholder": "Enter new todo",
       },
       "onError": [Function],
@@ -46,9 +47,9 @@ exports[`should render InputField component should render InputField component s
   }
 >
   <InputField
-    editTodo={Object {}}
-    handlerBlurInput={[MockFunction]}
-    onCreated={true}
+    editedTodo={Object {}}
+    flagCreated={true}
+    onBlurInput={[MockFunction]}
   />
 </ContextProvider>
 `;

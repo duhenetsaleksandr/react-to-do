@@ -4,6 +4,8 @@ exports[`should render NotTodos component should render NotTodos component snaps
 <div
   className="not-todos"
 >
-  Not found todos!
+  <MemoizedFormattedMessage
+    id="not_todos"
+  />
 </div>
 `;
