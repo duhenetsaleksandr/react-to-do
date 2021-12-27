@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render ToDoListItem component with default props should render ToDoListItem component snapshot 1`] = `
+<li
+  className="todos__list__item"
+>
+  <input
+    checked={false}
+    onChange={[Function]}
+    type="checkbox"
+  />
+  <div
+    className="title"
+  >
+    create app
+  </div>
+  <button
+    className="edit"
+    onClick={[Function]}
+  >
+    ✎
+  </button>
+  <button
+    className="remove"
+    onClick={[Function]}
+  >
+    ×
+  </button>
+</li>
+`;

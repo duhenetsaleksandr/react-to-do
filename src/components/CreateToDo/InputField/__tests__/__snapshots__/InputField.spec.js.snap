@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render InputField component should render InputField component snapshot 1`] = `
+<input
+  onChange={[Function]}
+  placeholder="Enter new todo"
+  type="text"
+  value=""
+/>
+`;

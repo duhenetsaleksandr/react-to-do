@@ -1,0 +1,28 @@
+@use 'src/styles/colors';
+
+.social-icons {
+    display: flex;
+}
+
+.social-icons >:not(:last-child) {
+    margin-right: 10px;
+}
+
+.social-link {
+    width: 25px;
+    height: 25px;
+    transition: all 0.2s ease;
+
+    &.dark {
+        color: colors.$secondary-color;
+    }
+
+    &.light {
+        color: colors.$primary-color;
+    }
+
+    &:hover {
+        cursor: pointer;
+        color: colors.$helper-color;
+    }
+}

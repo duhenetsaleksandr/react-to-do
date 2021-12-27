@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render CreateToDo component with custom props should render CreateToDo component snapshot 1`] = `
+<form
+  className="form-add-todo"
+  name="create-to-do-form"
+  onSubmit={[Function]}
+>
+  <InputField
+    editTodo={Object {}}
+    onCreated={true}
+  />
+  <button
+    type="submit"
+  >
+    Add task
+  </button>
+</form>
+`;

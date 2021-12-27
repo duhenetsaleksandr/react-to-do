@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render ToDoList component with custom props should render ToDoList component snapshot without todos 1`] = `
+<ul
+  className="todos__list"
+>
+  <NotTodos />
+</ul>
+`;
+
+exports[`should render ToDoList component with default props should render ToDoList component snapshot with todos 1`] = `
+<ul
+  className="todos__list"
+>
+  <ToDoListItem
+    deleteTodo={[MockFunction]}
+    key="1"
+    onEdit={[MockFunction]}
+    todo={
+      Object {
+        "completed": false,
+        "id": 1,
+        "title": "create app",
+      }
+    }
+    toggleTodo={[MockFunction]}
+  />
+  <ToDoListItem
+    deleteTodo={[MockFunction]}
+    key="2"
+    onEdit={[MockFunction]}
+    todo={
+      Object {
+        "completed": true,
+        "id": 2,
+        "title": "create app one more time",
+      }
+    }
+    toggleTodo={[MockFunction]}
+  />
+</ul>
+`;
