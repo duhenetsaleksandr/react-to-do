@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render CreateToDo component with custom props should render CreateToDo component snapshot 1`] = `
+<form
+  className="form-add-todo"
+  name="create-to-do-form"
+  onSubmit={[Function]}
+>
+  <InputField
+    editedTodo={Object {}}
+    flagCreated={true}
+    onBlurInput={[Function]}
+  />
+  <button
+    type="submit"
+  >
+    <MemoizedFormattedMessage
+      id="button_add"
+    />
+  </button>
+</form>
+`;

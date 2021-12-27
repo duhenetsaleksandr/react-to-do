@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Footer component should render Footer component snapshot 1`] = `
+<footer
+  className="footer dark"
+>
+  <div
+    className="container footer__container"
+  >
+    <Copyright />
+    <Social />
+  </div>
+</footer>
+`;

@@ -1,0 +1,21 @@
+@use 'src/styles/colors';
+
+.logo {
+    flex: 1 0 auto;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    svg {
+        display: block;
+        transition: all 0.2s ease;
+        height: 100%;
+    }
+
+    &.light svg {
+        color: colors.$secondary-color;
+    }
+
+    &.dark svg {
+        color: colors.$primary-color;
+    }
+}

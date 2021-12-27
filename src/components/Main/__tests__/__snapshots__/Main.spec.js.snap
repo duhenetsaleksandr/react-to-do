@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Main component should render Main component snapshot 1`] = `
+<main
+  className="main"
+>
+  <div
+    className="container main__container"
+  >
+    <div
+      className="todos-wrapper"
+    >
+      <CreateToDo
+        clearEditMode={[Function]}
+        createTodo={[MockFunction]}
+        editStateInfo={
+          Object {
+            "status": false,
+            "todo": Object {},
+          }
+        }
+        editTodo={[MockFunction]}
+      />
+      <ToDoList
+        deleteTodo={[MockFunction]}
+        onEdit={[Function]}
+        todos={
+          Array [
+            Object {
+              "completed": false,
+              "id": 1,
+              "title": "create app",
+            },
+            Object {
+              "completed": true,
+              "id": 2,
+              "title": "create app one more time",
+            },
+          ]
+        }
+        toggleTodo={[MockFunction]}
+      />
+    </div>
+  </div>
+</main>
+`;
